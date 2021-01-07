@@ -4,6 +4,7 @@ function createImg(url, alt) {
 
   img.src = url;
   img.alt = alt;
+  img.title = alt;
   img.className = 'avatar';
   img.width = 128;
   img.height = 128;
