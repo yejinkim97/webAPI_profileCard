@@ -1,5 +1,5 @@
 const users = require('./users');
-const Profile = require('./profile');
+const ProfileCard = require('./components/profile-card');
 
 function init() {
   // Safe to query for DOM nodes now that window is loaded
@@ -17,14 +17,17 @@ function init() {
 
       // Otherwise, iterate across all the users
       users.forEach(user => {
-        // Turn each raw User object into a Profile object
-        const profile = new Profile(user);
+        // Extract and prepare the user properties we care about
+        const id = user.id;
+        const name = `${user.first_name} ${user.last_name}`;
+        const email = user.email;
+        const avatarUrl = user.avatar;
 
-        // Use the Profile object to create a tree of DOM nodes
-        const profileEl = profile.render();
+        // Create a ProfileCard of DOM nodes for each user
+        const profileCard = new ProfileCard(id, name, email, avatarUrl);
 
-        // Append these DOM nodes to our document's main element
-        main.appendChild(profileEl);
+        // Append the user's ProfileCard DOM nodes to our document's main element
+        main.appendChild(profileCard.render());
       })
     });
 }

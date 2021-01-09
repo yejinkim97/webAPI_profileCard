@@ -18,14 +18,14 @@ main {
 }
 
 /* Make the avatar's edge rounded, add a border, and fill the background */
-.profile-card .avatar {
+.profile-avatar {
   border-radius: 50%;
   border: 3px solid #0074D9;
   background-color: #0074D9;
 }
 
 /* Vertically centre the name/email info */
-.profile-card .user-info {
+.user-info {
   margin-left: 20px;
   display: flex;
   flex-direction: column;
@@ -33,19 +33,19 @@ main {
 }
 
 /* Set the size of the text for the user's name, and eliminate margin */
-.profile-card .user-info h2 {
+.profile-name {
   color: #001f3f;
   font-size: 1.5em;
   margin: 0;
 }
 
 /* Set the size of the text for the user's email, and eliminate margin */
-.profile-card .user-info h3 {
+.profile-email {
   font-size: 1.3em;
   margin: 0;
 }
 
 /* Use a lighter blue for the email link */
-.profile-card .user-info h3 a {
+.profile-email a {
   color: #0074D9;
 }
