@@ -14,7 +14,11 @@ class ProfileCard {
     const section = document.createElement('section');
     section.id = `user-${this.id}`;
     section.className = 'profile-card';
-  
+    section.style = "display:flex";
+    if(this.id > 6){
+      section.style = "display:none";
+      section.className = 'profile-card2';
+    }
     const avatar = new Avatar(this.avatarUrl, this.name);
     const info = new UserInfo(this.name, this.email);
   

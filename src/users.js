@@ -1,18 +1,30 @@
-const apiUrl = 'https://reqres.in/api';
+const apiUrl = "https://reqres.in/api";
 
-function load() {
-  const url = `${apiUrl}/users`;
-
+function load(pageNumber) {
+  const url = `${apiUrl}/users?page=${pageNumber}`;
+  var result = [];
+  var result2 = [];
   return fetch(url)
-    .then(res => {
-      if(!res.ok) {
+    .then((res) => {
+      if (!res.ok) {
         throw new Error(`API returned status code ${res.status}`);
       }
 
       return res.json();
     })
-    .then(results => results.data)
-    .catch(err => {
+    .then((results) => {
+      result = results.data;
+
+      return fetch(`${apiUrl}/users?page=2`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((results) => {
+          result2 = results.data;
+          return result.concat(result2);
+        });
+    })
+    .catch((err) => {
       console.warn(err);
 
       // We have no users to process, return an empty array

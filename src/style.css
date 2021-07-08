@@ -12,9 +12,14 @@ main {
 
 /* Use Flexbox to manage the horizontal spacing of the avatar and user-info */
 .profile-card {
-  display: flex;
+  
   margin-bottom: 15px;
-  min-width: 415px;
+  min-width: 450px;
+}
+.profile-card2{
+  
+  margin-bottom: 15px;
+  min-width: 450px;
 }
 
 /* Make the avatar's edge rounded, add a border, and fill the background */
@@ -48,4 +53,27 @@ main {
 /* Use a lighter blue for the email link */
 .profile-email a {
   color: #0074D9;
+}
+
+div{
+  margin: 10px;
+}
+button{
+  ​background-color: white; 
+  color: black; 
+  border: 2px solid #0074D9;
+  padding: 13px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+  
+}
+button:hover {
+  background-color: #0074D9;
+  color: white;
 }
